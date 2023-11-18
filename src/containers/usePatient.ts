@@ -1,13 +1,12 @@
 import useSWR from 'swr';
 import { API_GET_PATIENT, DEFAULT_PATIENT } from '../constant/constant';
 import { Patient } from '../interface/patient';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import { PatientContext } from '../context/PatientContext';
 import { fetcher } from '../utils/utils';
 
 export const usePatient = () => {
-  const { patients, setPatients } = useContext(PatientContext);
+  const [patients, setPatients] = useState<Patient[]>([]);
 
   const {
     data: apiPatients,
@@ -58,12 +57,12 @@ export const usePatient = () => {
     });
     setIsModalOpen(true);
   };
+
   useEffect(() => {
     if (apiPatients && patients.length === 0) {
       setPatients(apiPatients);
     }
-  }, [apiPatients, patients.length, setPatients]);
-
+  }, [apiPatients, patients.length]);
   const handleSnackbarClose = (
     event?: React.SyntheticEvent | Event,
     reason?: string
