@@ -7,18 +7,19 @@ interface Props {
     label: string
     handleOnClick: () => void
     buttonType: ButtonType
+    className?: string
 }
 
-const Button: React.FC<Props> = ({ label, handleOnClick, buttonType }) => {
+const Button: React.FC<Props> = ({ label, handleOnClick, buttonType, className }) => {
     return (
-        <Container onClick={handleOnClick} buttonType={buttonType}>{label}</Container>
+        <Container className={className} onClick={handleOnClick} buttonType={buttonType}>{label}</Container>
     )
 }
 
 export default Button
 
 const Container = styled.button<{ buttonType: ButtonType }>(({ buttonType }) => ({
-    width: 120,
+    width: 110,
     height: 48,
     padding: '4px 8px',
     borderRadius: 22,

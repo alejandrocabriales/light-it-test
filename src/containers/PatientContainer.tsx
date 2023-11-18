@@ -8,6 +8,7 @@ import { Patient } from '../interface/patient';
 import PatientEditModal from '../components/BasicModal/PatientEditModal';
 import { IconButton, Snackbar } from '@mui/material';
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import MainContainer from '../components/MainContainer/MainContainer';
 
 const PatientContainer = () => {
     const {
@@ -38,12 +39,12 @@ const PatientContainer = () => {
     }
 
     return (
-        <Container>
+        <MainContainer>
             <ContainerTitleButton>
                 <Title>Frontend - Patient Data Management</Title>
-                <IconButton onClick={handleOpenModal} disableRipple={true}>
+                <IconButtonStyled onClick={handleOpenModal} disableRipple={true}>
                     <AddBoxIcon />
-                </IconButton>
+                </IconButtonStyled>
             </ContainerTitleButton>
             <CardsContainer>
                 {patients?.map((patient: Patient) => {
@@ -65,33 +66,51 @@ const PatientContainer = () => {
                     Patient saved successfully!
                 </MuiAlert>
             </Snackbar>
-        </Container>
+        </MainContainer>
     )
 }
 
 export default PatientContainer
-
-const Container = styled.div({
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 16,
-});
 
 const CardsContainer = styled.div({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     flexWrap: 'wrap',
-    gap: 32,
+    gap: 16,
+    marginLeft: 16,
+    marginRight: 16,
+    '@media (min-width: 375px)': {
+        gap: 32,
+        marginLeft: 'revert',
+        marginRight: 'revert'
+    },
 });
 const Title = styled.h1({
     marginBottom: 32,
     marginTop: 32,
-    textAlign: 'center'
+    fontSize: 24,
+    textAlign: 'center',
+    '@media (min-width: 834px)': {
+        fontSize: 32,
+    },
 })
 
 const ContainerTitleButton = styled.div({
     display: 'flex',
     justifyContent: 'center',
-    gap: 16
+    gap: 16,
+    marginLeft: 8,
+    marginRight: 8,
+    '@media (min-width: 834px)': {
+        gap: 8,
+        marginLeft: 'revert',
+        marginRight: 'revert'
+    },
+})
+
+const IconButtonStyled = styled(IconButton)({
+    '@media (min-width: 834px)': {
+        marginTop: 5,
+    },
 })

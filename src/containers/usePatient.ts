@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { API, DEFAULT_PATIENT } from '../constant/constant';
+import { API_GET_PATIENT, DEFAULT_PATIENT } from '../constant/constant';
 import { Patient } from '../interface/patient';
 import { useContext, useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
@@ -13,7 +13,7 @@ export const usePatient = () => {
     data: apiPatients,
     error,
     isLoading,
-  } = useSWR<Patient[]>(API, fetcher);
+  } = useSWR<Patient[]>(API_GET_PATIENT, fetcher);
 
   const patientsSkeleton = new Array(10).fill(null);
 
@@ -44,7 +44,6 @@ export const usePatient = () => {
         createdAt: DateTime.now().toISO() || '',
         id: `${patients.length + 1}`,
       };
-      console.log({ newPatient });
       setPatients([...patients, newPatient]);
     }
     setSnackbarOpen(true);

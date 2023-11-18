@@ -68,9 +68,12 @@ export const Container = styled.div({
   background: '#FFFFFF',
   borderRadius: 6,
   boxShadow: '0px 20px 40px rgba(219, 227, 237, 0.4), 0px 1px 3px rgba(190, 190, 190, 0.25)',
-  width: 300,
+  width: '100%',
   padding: 16,
-  position: 'relative'
+  position: 'relative',
+  '@media (min-width: 375px)': {
+    width: 300,
+  },
 });
 
 export const ContainerAvatar = styled.div({
@@ -116,7 +119,7 @@ const RowInformation = styled.div({
 })
 
 const ContainerButton = styled.div({
-  // position: 'absolute',
+
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'flex-end'

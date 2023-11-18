@@ -19,11 +19,11 @@ export const patientValidationSchema = yup.object({
     .required('Name is required')
     .min(2, 'Name must be at least 2 characters long'),
   avatar: yup.string().url('Avatar must be a valid URL').required(),
+  website: yup.string().url('Website must be a valid URL').required(),
   description: yup
     .string()
     .max(500, 'Description must be less than 500 characters')
     .required(),
-  website: yup.string().url('Website must be a valid URL').required(),
 });
 
 export const fetcher = async (url: string) => {

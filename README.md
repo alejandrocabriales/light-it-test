@@ -14,33 +14,49 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before you begin, ensure you have met the following requirements:
 
-### `yarn build`
+- **Node.js:** Make sure you have Node.js installed on your machine. You can download it from [https://nodejs.org/](https://nodejs.org/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Yarn:** We use Yarn as the package manager. If you don't have Yarn installed, you can install it by following the instructions at [https://classic.yarnpkg.com/en/docs/install/](https://classic.yarnpkg.com/en/docs/install/).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository to your local machine using this command:
+   git clone https://github.com/alejandrocabriales/light-it-test.git
 
-### `yarn eject`
+2. Navigate to the project directory:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Install the project dependencies using Yarn:
+   yarn install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the Application
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Once you have installed the dependencies, you can run the application with the following command:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This will start the development server, and you can access the application in your web browser at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Brief documentation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Material Ui
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In terms of UI design, I opted for Material-UI. The main reason behind this choice was its simplicity and the availability of a comprehensive set of pre-designed components. Since there were no specific design guidelines to follow, Material-UI's components made it easy to use and saved a lot of time as I could readily use components like buttons, cards, and modals to create a cohesive and responsive UI.
+
+### Prettier:
+
+To maintain consistent code formatting, I integrated Prettier into the project. Prettier automatically enforces code style rules, which not only ensures readability but also reduces potential formatting-related issues.
+
+### ESLint:
+
+For code quality and standards enforcement, I used ESLint. ESLint helped catch errors and encouraged best practices throughout the development process.
+
+### SWR and State Management :
+
+For data fetching, SWR (Stale-While-Revalidate) was my choice. SWR simplified the management of API requests(Online one request was necesary)
+Regarding state management, I decided to stick with React's built-in state management capabilities(Context)
+
+### Summary
+
+With React, Material-UI, Prettier, ESLint, and SWR , In my oponion those technologies fit the requieres of the project to made

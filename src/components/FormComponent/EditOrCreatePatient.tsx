@@ -57,16 +57,6 @@ const EditOrCreatePatient: React.FC<Props> = ({ handleClose, onSave, initialValu
                 helperText={touched.avatar && errors.avatar}
             />
             <TextField
-                label="Description"
-                name="description"
-                value={values.description}
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-                error={touched.description && Boolean(errors.description)}
-                helperText={touched.description && errors.description}
-            />
-            <TextField
                 label="Website"
                 name="website"
                 value={values.website}
@@ -76,6 +66,19 @@ const EditOrCreatePatient: React.FC<Props> = ({ handleClose, onSave, initialValu
                 error={touched.website && Boolean(errors.website)}
                 helperText={touched.website && errors.website}
             />
+            <TextField
+                label="Description"
+                name="description"
+                value={values.description}
+                onChange={handleChange}
+                fullWidth
+                margin="normal"
+                multiline
+                rows={4}
+                error={touched.description && Boolean(errors.description)}
+                helperText={touched.description && errors.description}
+            />
+
             <ButtonSection>
                 <SaveButton type="submit" variant="contained" color="success" >
                     Save
